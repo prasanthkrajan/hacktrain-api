@@ -11,24 +11,11 @@ source 'https://rubygems.org'
 #gem 'rake'
 gem 'puma'
 gem 'pg', '~> 0.20'
-gem 'sprockets'
-gem 'sprockets-rails'
-gem 'uglifier'
-gem 'coffee-rails'
-gem 'jquery-rails'
 gem 'turbolinks'
 gem 'unobtrusive_flash'
 gem 'responders'
-gem 'slim', require: 'slim/smart' # https://github.com/slim-template/slim/blob/master/doc/smart.md
-gem 'slim-rails'
-gem 'sorcery'
-gem 'recaptcha', require: 'recaptcha/rails'
-gem 'sendgrid-actionmailer', github: 'eddiezane/sendgrid-actionmailer'
-gem 'httparty'
 gem 'decisiontree', '~> 0.5.0'
 
-
-gem 'bootsnap', require: false
 
 
 group :development do
