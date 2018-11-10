@@ -26,6 +26,7 @@ class CsvReaderService
   private
 
   def sanitize_data(array)
-    [array[2..4],array.last]
+    array_of_coordinates = array[2..4].map!{|s| s.to_f}.reduce(:+) / array[2..4].size.to_f
+    [array_of_coordinates, array.last]
   end
 end
