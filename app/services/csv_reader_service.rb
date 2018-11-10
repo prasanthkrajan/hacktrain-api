@@ -15,11 +15,17 @@ class CsvReaderService
 
   def call!
     arr = []
-    csv_text = File.read(file_path)
+    csv_text = File.read(file_path).scrub
     csv = CSV.parse(csv_text, :headers => true)
     csv.each do |row|
-      arr << row
+      arr << sanitize_data(row.to_hash.values)
     end
     arr
+  end
+
+  private
+
+  def sanitize_data(array)
+    [array[2..4],array.last]
   end
 end
