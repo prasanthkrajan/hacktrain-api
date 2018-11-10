@@ -19,9 +19,7 @@ class DataAnalysis
 
   def training_data
     arr = []
-    list_of_files.each do |file|
-      arr << CsvReaderService.call!("./data/#{file}")
-    end
+    arr << CsvReaderService.call!("./data/#{list_of_files[0]}")
     arr.flatten(1)
   end
 
