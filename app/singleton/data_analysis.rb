@@ -4,7 +4,7 @@ class DataAnalysis
   include Singleton
 
   def initialize
-    @caller = DecisionTree::ID3Tree.new(labels, training_data, "Walking",  :continuous)
+    @caller = DecisionTree::ID3Tree.new(labels, training_data, "Train",  :continuous)
   end
 
   def train
