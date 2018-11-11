@@ -16,6 +16,11 @@ gem 'unobtrusive_flash'
 gem 'responders'
 gem 'decisiontree', '~> 0.5.0'
 gem 'uglifier'
+gem 'redis-rails'
+gem 'redis-namespace'
+gem 'redis-objects'
+
+
 
 
 

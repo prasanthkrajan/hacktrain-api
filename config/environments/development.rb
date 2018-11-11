@@ -26,4 +26,10 @@ HacktrainApi::Application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
+
+  config.cache_store = :redis_store, {
+  expires_in: 1.week,
+  namespace: 'cache',
+  redis: { host: 'localhost', port: 6379, db: 0 },
+  }
 end

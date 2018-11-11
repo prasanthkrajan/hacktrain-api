@@ -5,6 +5,7 @@ class DataAnalysis
 
   def initialize
     @caller = DecisionTree::ID3Tree.new(labels, training_data, "Train",  :continuous)
+    @test_array = []
   end
 
   def train
@@ -12,7 +13,17 @@ class DataAnalysis
   end
 
   def predict(test_data)
-    @caller.predict(test_data)
+    test_data_in_arr = [test_data]
+    @caller.predict(test_data_in_arr)
+  end
+
+  def log(time = Time.now)
+    @test_array << time
+    puts @test_array
+  end
+
+  def display_log
+    @test_array
   end
 
   private
