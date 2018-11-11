@@ -3,30 +3,13 @@ class Api::V1::MotionDataController < ApplicationController
 
   def retrieve
     result = classifier.classify(new_datapoint)
-    render json: {result: result}
+    render json: result
   end
 
   private
 
   def vectors
-    vectors = Rails.cache.read 'knn_vectors'
-    if vectors.nil?
-      arr = []
-      list_of_files.each do |file|
-        file_data = Rails.cache.read "#{file}_data"
-        if file_data.present?
-          arr << file_data
-        else
-          data = CsvReaderService.call!("./data/#{file}")
-          Rails.cache.write "#{file}_data", data
-          arr << data
-        end
-      end
-      Rails.cache.write 'knn_vectors', arr.flatten(1)
-      arr.flatten(1)
-    else 
-      vectors
-    end
+    Rails.cache.read 'knn_vectors'
   end
 
   def list_of_files

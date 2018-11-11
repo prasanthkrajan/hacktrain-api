@@ -20,9 +20,7 @@ gem 'redis-rails'
 gem 'redis-namespace'
 gem 'redis-objects'
 gem 'knn', git: 'git@github-spuul:prasanthkrajan/ruby-knn.git'
-
-
-
+gem 'rack-cors', require: 'rack/cors'
 
 
 group :development do
