@@ -1,3 +1,9 @@
+GIT
+  remote: git@github-spuul:prasanthkrajan/ruby-knn.git
+  revision: ccfdd1e5a850db287b8081b53a6be23f4511a7fb
+  specs:
+    knn (1.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -189,6 +195,7 @@ DEPENDENCIES
   bullet
   decisiontree (~> 0.5.0)
   factory_girl_rails
+  knn!
   listen
   pg (~> 0.20)
   pry-rails

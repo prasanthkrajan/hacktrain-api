@@ -19,6 +19,7 @@ gem 'uglifier'
 gem 'redis-rails'
 gem 'redis-namespace'
 gem 'redis-objects'
+gem 'knn', git: 'git@github-spuul:prasanthkrajan/ruby-knn.git'
 
 
 
