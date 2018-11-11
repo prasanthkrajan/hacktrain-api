@@ -17,7 +17,7 @@ class Api::V1::MotionDataController < ApplicationController
       @analysis = DataAnalysis.instance
       @analysis.train
       puts "Training Data"
-       Rails.cache.write 'analysis_object', @analysis
+      Rails.cache.write 'analysis_object', @analysis
     end
   end
 end
