@@ -1,6 +1,8 @@
 class Api::V1::MotionDataController < ApplicationController 
   require 'knn'
 
+  before_action :validate_params
+
   def retrieve
     result = classifier.classify(new_datapoint)
     render json: result
@@ -43,5 +45,13 @@ class Api::V1::MotionDataController < ApplicationController
 
   def new_datapoint
     Knn::Vector.new(sanitized_params, nil)
+  end
+
+  def validate_params
+    render json: "Pass in X, Y and Z" unless coordinates_available?
+  end
+
+  def coordinates_available?
+    params[:x].present? && params[:y].present? && params[:z].present?
   end
 end
